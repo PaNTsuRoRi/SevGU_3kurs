@@ -1,0 +1,78 @@
+#main{
+	width: 100%;
+}
+#header{
+	text-align: center;
+}
+#h_image{
+	height: 150px;
+}
+#top{
+	display: flex;
+}
+#topmenu{
+	font-size:150%;
+	width:60%;
+	display: inline-block;
+	column-gap: 50px;
+}
+#topmenu a{
+	margin-left: 30px;
+	text-align:center;
+}
+#login{
+	display: inline-block;
+	text-align: right;
+	width: 40%;
+}
+.right_td{
+	text-align:right;
+}
+#content{
+	width: 100%;
+	display: flex;
+}
+#main_content{
+	display: inline-block;
+	width: 90%;
+}
+.article_container{
+	width: 100%;
+	display: flex;
+}
+.article h1, .article_img{
+	text-align: center;
+}
+.articles_img img {
+ height: 150px;
+}
+.article_img img{
+	height: 250px;
+}
+.articles_img{
+	display: inline-block;
+	width: 30%;
+}
+.article_container a{
+	display: inline-block;
+	width: 70%;
+}
+#banners{
+	border-left: 1px solid  #000;
+	width: 240px;
+	display: inline-block;
+}
+.banner img{
+	padding-left: 5px;
+	width: 90%
+}
+.message-box{
+	height: 200px;
+	width: 500px;
+}
+#footer p{
+	text-align: center;
+}
+#button{
+	margin-top: 30px;
+}

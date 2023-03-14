@@ -1,0 +1,112 @@
+<html>
+<head>
+	<title>Поликлиника</title>
+	<meta http-equiv="Content-type" content="text/html; charset=1251">
+	<link rel="stylesheet" type="text/css" href="styles/main.css">
+</head>
+<body link="black" alink="blue" vlink="black">
+	<table id="main">
+		<tr> <!-- Голова -->
+			<td colspan="2" id="header">
+				<h1>Поликлиника</h1>
+				<p>
+					<img src="images/header.jpg" alt="Шапка сайта">
+				</p>
+			</td>
+		</tr>
+		<tr> <!-- Линия -->
+			<td colspan="2">
+				<hr>
+			</td>
+		</tr>
+		<tr>
+			<td> <!-- Меню -->
+				<table id="topmenu">
+					<tr>
+						<td>
+							<a href="index.html">Главная</a>
+						</td>
+						<td>
+							<a href="reg.html">Регистрация</a>
+						</td>
+						<td>
+							<a href="articles.html">Статьи</a>
+						</td>
+						<td>
+							<a href="guestbook.html">Гостевая книга</a>
+						</td>
+					</tr>
+				</table>
+			</td> 
+			<td> <!-- Авторизация -->
+				<form action="auth.php" name="auth" method="post">
+					<table align="right">
+						<tr>
+							<td>E-mail:</td>
+							<td>
+								<input type="text" name="email">
+							</td>
+							<td>Пароль:</td>
+							<td>
+								<input type="password" name="password">
+							</td>
+						</tr>
+						<tr>
+							<td colspan="4" class="rigth_td">
+								<input type="submit" name="button_auth" value="Войти">
+							</td>
+						</tr>
+					</table>
+				</form>
+			</td>
+		</tr>
+		<tr> <!-- Линия -->
+			<td colspan="2"><hr>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<table cellpadding="0" cellspacing="0" id="content">
+					<tr>
+						<td> <!-- Информация об учреждении -->
+							<div class="article">
+								<h1>Об учреждении</h1>
+								<p class="article_img">
+									<img src="image/main.png" alt="Фото поликлиники">
+								</p>
+								<p>Информация о поликлинике...</p>
+								<h2>Главный врач</h2>
+								<p class="article_img">
+									<img src="image/main.png" alt="Фото главного врача">
+								</p>
+								<p>Информация о главном враче...</p>
+							</div>
+						</td>
+						<td id="banners"> <!-- Баннеры -->
+							<div class="banner">
+								<a href="#">
+									<img src="images/banner_1.jpg" alt="Баннер1">
+								</a>
+							</div>
+							<hr>
+							<div class="banner">
+								<a href="#">
+									<img src="images/banner_2.jpg" alt="Баннер2">
+								</a>
+							</div>
+							<hr>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2"><hr></td>
+		</tr>
+		<tr>
+			<td colspan="2" id="footer">
+				<p>Все права защищены &copy; "Поликлиника"</p>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>

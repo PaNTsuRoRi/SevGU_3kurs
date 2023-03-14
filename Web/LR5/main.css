@@ -1,0 +1,24 @@
+table{
+ font-size: 50px;
+ padding: 5px;
+}
+#calc{
+ border: 3px solid gray;
+}
+#result{
+ text-align: right;
+ height: 70px;
+ background-color: wheat;
+}
+#digits td, #signs td, #funcs td{
+ border: 2px solid white;
+ cursor: pointer;
+ text-align: center;
+ background-color: #BBBBBB;
+}
+#digits td, #signs td{
+ width: 100px;
+}
+#funcs td{
+ width: 250px;
+}

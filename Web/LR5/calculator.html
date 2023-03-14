@@ -1,0 +1,150 @@
+<html>
+<head>
+ <title>Калькулятор</title>
+ <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+ <link rel="stylesheet" type="text/css" href="main.css">
+ <script>
+  window.onload = function(){
+   //переменные, определенные здесь, доступны и во сложенных функциях
+   var oDigits = document.getElementById('digits');
+   var oSigns = document.getElementById('signs');
+   var oResult = document.getElementById('result');
+   var oClear = document.getElementById('clear');
+   var oCalc = document.getElementById('calculate');
+   var oFuncs = document.getElementById('funcs');
+   
+   //Обрабатываем щелчок мыши по цифрам и знакам
+   oDigits.onclick =
+   oSigns.onclick =
+   oFuncs.onclick =
+   function(e){
+    //Mozilla FireFox и ряд других браузеров отправляет в
+	//обработчик событий объект-событие
+	//Internet Explorer не отправляет ничего
+	var elem = null; //элемент, на котором произошло событие
+	if(e) elem = e.target; //работает в FireFox
+	else elem = window.event.srcElement; //работает в Internet Explorer
+	if(elem && elem.tagName.toLowerCase() == 'td')
+	 oResult.innerHTML += elem.innerHTML;
+   }
+   
+   oCalc.onclick = function(e){
+    if(!e) e = window.event;
+	//запрещаем передачу события родительскому элементу
+	e.cancelBubble = true;
+	try{ //перехватываем возможное исключение
+	 //выполняем расчет выражения, записанного в строке
+	 oResult.innerHTML = eval(oResult.innerHTML);
+	}
+	catch(ex) { alert("Ошибка") }
+   }
+   
+   oClear.onclick = function(e){
+    if(!e) e = window.event;
+	e.cancelBubble = true;
+	try{
+	 oResult.innerHTML = '';
+	}
+	catch(ex) { alert("Ошибка") }
+   }
+   
+   oDigits.onmousedown =
+   oSigns.onmousedown =
+   oFuncs.onmousedown =
+   function(e){
+    var elem = null;
+	if(e) elem = e.target;
+	else elem = window.event.srcElement;
+	try{
+	 elem.style.color = 'red';
+	}
+	catch (ex) { alert("Ошибка") } 
+   }
+   
+   oDigits.onmouseup =
+   oSigns.onmouseup =
+   oFuncs.onmouseup =
+   function(e){
+    var elem = null;
+	if(e) elem = e.target;
+	else elem = window.event.srcElement;
+	try{
+	 elem.style.color = '';
+	}
+	catch (ex) { alert("Ошибка") } 
+   }
+  }
+ </script>
+</head>
+<body>
+ <table id="calc">
+  <caption>Калькулятор</caption>
+  <tr>
+   <td colspan="2" id="result">
+   </td>
+  </tr>
+  <tr>
+   <td colspan="2">
+    <table id="funcs">
+     <tr>
+	  <td>Math.min</td>
+	  <td>Math.SQRT12</td>
+	 </tr>
+	 <tr>
+	  <td>Math.LN10</td>
+	  <td>Math.SQRT2</td>
+	 </tr>
+	 <tr>
+	  <td colspan="2">,</td>
+	 </tr>
+    </table>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <table id="digits">
+	 <tr>
+	  <td>7</td>
+	  <td>8</td>
+	  <td>9</td>
+	 </tr>
+	 <tr>
+	  <td>4</td>
+	  <td>5</td>
+	  <td>6</td>
+	 </tr>
+	 <tr>
+	  <td>1</td>
+	  <td>2</td>
+	  <td>3</td>
+	 </tr>
+	 <tr>
+	  <td colspan="2">0</td>
+	  <td>.</td>
+	 </tr>
+	</table>
+   </td>
+   <td>
+    <table id="signs">
+	 <tr>
+	  <td>/</td>
+	  <td>*</td>
+	 </tr>
+	 <tr>
+	  <td>-</td>
+	  <td>+</td>
+	 </tr>
+	 <tr>
+	  <td>(</td>
+	  <td>)</td>
+	 </tr>
+	 <tr>
+	  <td id="clear">C</td>
+	  <td id="calculate">=</td>
+	 </tr>
+	</table>
+   </td>
+  </tr>
+ </table>
+</body>
+</html>

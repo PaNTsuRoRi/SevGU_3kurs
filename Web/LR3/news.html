@@ -1,0 +1,72 @@
+<html>
+<head>
+	<title>Поликлиника - Новости</title>
+	<meta http-equiv="Content-type" content="text/html; charset=1251">
+	<link rel="stylesheet" type="text/css" href="styles/main.css">
+</head>
+<body link="black" alink="blue" vlink="black">
+	<div id="main">
+		<div id="header"> <!-- Голова -->
+			<h1>Поликлиника</h1>
+			<p>
+				<img src="images/header.jpg" alt="Шапка сайта">
+			</p>
+		</div>
+		<hr>
+		<div id="topmenu"> <!-- Меню -->
+			<a href="index.html">Главная</a>					
+			<a href="reg.html">Регистрация</a>
+			<a href="articles.html">Статьи</a>
+			<a href="guestbook.html">Гостевая книга</a>
+		</div>
+		<div id="login"> <!-- Авторизация -->
+			<form action="auth.php" name="auth" method="post">
+				E-mail:
+				<input type="text" name="email">
+				Пароль:
+				<input type="password" name="password">
+				<input type="submit" name="button_auth" value="Войти">
+			</form>
+		</div>
+		<hr>
+		<div id="content">
+			<div id="main_content">
+				<div class="article">
+					<h1 align="center"> Регистрация </h1>
+					<form action="reg.php" name="reg" method="post">
+						<div text-align="left">
+							E-mail:<br>
+							<input type="text" name="email"><br>
+							Логин:<br>
+							<input type="text" name="login"><br>
+							Пароль:<br>
+							<input type="password" name="password"><br>
+							Подтверждение пароля:<br>
+							<input type="password" name="password_conf"><br>
+							<input id="button" type="submit" name="button_reg" value="Зарегистрироваться">
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<hr>
+		<div id="banners"> <!-- Баннеры -->
+			<div class="banner">
+				<a href="#">
+					<img src="images/banner_1.jpg" alt="Баннер1">
+				</a>
+			</div>
+			<hr>
+			<div class="banner">
+				<a href="#">
+					<img src="images/banner_2.jpg" alt="Баннер2">
+				</a>
+			</div>
+			<hr>
+		</div>
+		<div id="footer">
+			<p>Все права защищены &copy; "Поликлиника"</p>
+		</div>
+	</div>
+</body>
+</html>

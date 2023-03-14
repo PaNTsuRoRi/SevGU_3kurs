@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Component_Advisor</string>
+    <string name="find_component">Find Component!</string>
+    <string name="type"></string>
+    <string-array name="type_components">
+        <item>Процессоры</item>
+        <item>Мониторы</item>
+        <item>Другое</item>
+    </string-array>
+</resources>

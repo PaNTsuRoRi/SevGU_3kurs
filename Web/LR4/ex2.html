@@ -1,0 +1,40 @@
+<html>
+<head>
+ <title>Example 2</title>
+ <script Language="JavaScript">
+  <!--
+   function IsEmpty(data){
+    if(data.length==0) return true
+	else return false
+   }
+   function IsNumber(data){
+    if(isFinite(data)){
+	 n=parseInt(data);
+	 if((n>5)&&(n<100)) return true
+	 else return false
+	}
+   }
+   function IsFormOK(){
+    if(IsEmpty(document.F.Myname.value)){
+	 alert("Вам следует ввести имя!")
+	 return false
+	}
+	if(!IsNumber(document.F.Myage.value)){
+	 alert("Возраст должен быть указан целым числом от 5 до 100.")
+	 return false
+	}
+	return true
+   }
+  //-->
+ </script>
+</head>
+<body>
+ <form name="F" onSubmit="return IsFormOK()">
+  Введите ваше имя:
+  <input type="text" name="Myname"> <br>
+  Введите ваш возраст:
+  <input type="text" name="Myage"> <br>
+  <input type="submit" value="Послать данные!">
+ </form>
+</body>
+</html>

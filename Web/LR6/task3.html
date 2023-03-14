@@ -1,0 +1,32 @@
+<html>
+<head>
+ <title>Task 3</title>
+ <script src="http://code.jquery.com/jquery-latest.js"></script>
+ <style>
+  img{
+   width: 100px;
+   height: 100px;
+  }
+ </style>
+ <script>
+  $(document).ready(function(){
+   var evenElementImg = $('img:even');
+   $('button').click(function(){
+    evenElementImg.slideToggle('slow');
+   });
+  });
+ </script>
+</head>
+<body bgcolor="gray">
+ <button>Start animation</button>
+ <br><br>
+ <div>
+  <img src="Image/1.jpg">
+  <img src="Image/2.jpg">
+  <img src="Image/3.jpg">
+  <img src="Image/4.jpg">
+  <img src="Image/5.jpg">
+  <img src="Image/6.jpg">
+ </div>
+</body>
+</html>

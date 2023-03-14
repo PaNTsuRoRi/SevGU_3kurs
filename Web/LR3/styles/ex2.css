@@ -1,0 +1,21 @@
+#container{
+	position: absolute;
+	background: #999999;
+	width: 500px;
+	height: 400px;
+}
+
+#cell1{
+	background: #999900;
+	position: absolute;
+	height: 100%;
+	width: 20%;
+}
+
+#cell2{
+	background: #990099;
+	position: absolute;
+	left: 20%;
+	height: 100%;
+	width: 20%;
+}

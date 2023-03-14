@@ -1,0 +1,66 @@
+<html>
+<head>
+    <title>База данных</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript">
+        function newPage() {
+            value1=""+document.getElementsByName('VK')[0].value;
+            value2=""+document.getElementsByName('VT')[0].value;
+            value3=""+document.getElementsByName('PH')[0].value;
+            value4=""+document.getElementsByName('OT')[0].value;
+            value5=""+document.getElementsByName('MT')[0].value;
+            value6=""+document.getElementsByName('PT')[0].value;
+            value7=""+document.getElementsByName('KM')[0].value;
+            value8=""+document.getElementsByName('FT')[0].value;
+            value9=""+document.getElementsByName('UT')[0].value;
+            self.location="procedure.html?="+value1+"="+value2+"="+value3+"="+value4+
+                "="+value5+"="+value6+"="+value7+"="+value8+"="+value9;
+        }
+    </script> 
+</head>
+<body>
+    <form id="form1">
+        <ul>
+            <li class="li">
+                <label>Врач-косметолог</label>
+                <input type="text" name="VK" value="20">
+            </li>
+            <li class="li">
+                <label>Врач-трихолог</label>
+                <input type="text" name="VT" value="20">
+            </li>
+            <li class="li">
+                <label>Пластический хирург</label>
+                <input type="text" name="PH" value="30">
+            </li>
+            <li class="li">
+                <label>Озонотерапия</label>
+                <input type="text" name="OT" value="40">
+            </li>
+            <li class="li">
+                <label>Мезотерапия</label>
+                <input type="text" name="MT" value="60">
+            </li>
+            <li class="li">
+                <label>Плазмотерапия</label>
+                <input type="text" name="PT" value="70">
+            </li>
+            <li class="li">
+                <label>Криомассаж</label>
+                <input type="text" name="KM" value="50">
+            </li>
+            <li class="li">
+                <label>Фототерапия</label>
+                <input type="text" name="FT" value="80">
+            </li>
+            <li class="li">
+                <label>Удаление татуировок</label>
+                <input type="text" name="UT" value="90">
+            </li>
+            <li class="but">
+                <input type="button" name="button" value="Подтвердить данные" onClick="newPage()">
+            </li>
+        </ul>
+    </form>        
+</body>
+</html>

@@ -1,0 +1,25 @@
+#container{
+	background: #AAAA00;
+	text-align: center;
+	margin: auto;
+	width: 500px;
+	height: 400px;
+}
+
+#block1{
+	background: #AA00AA;
+	margin-top: 210px;
+	margin-left: 40px;
+	float: left;
+	width: 120px;
+	height: 80px;
+}
+
+#block2{
+	background: #00AAAA;
+	margin-right: 20px;
+	margin-top: 230px;
+	float: right;
+	width: 80px;
+	height: 120px;
+}

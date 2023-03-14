@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">lab3</string>
+    <string name="textview">Укажите страны, которые хотите посетить:</string>
+    <string name="inquiry">ЗАПРОС</string>
+    <string name="country"></string>
+    <string name="price"></string>
+    <string name="france">Франция</string>
+    <string name="italy">Италия</string>
+    <string name="china">Китай</string>
+    <string name="germany">Германия</string>
+    <string name="japan">Япония</string>
+    <string name="ready">ГОТОВО</string>
+</resources>

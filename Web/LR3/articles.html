@@ -1,0 +1,80 @@
+<html>
+<head>
+	<title>Поликлиника</title>
+	<meta http-equiv="Content-type" content="text/html; charset=1251">
+	<link rel="stylesheet" type="text/css" href="styles/main.css">
+</head>
+<body link="black" alink="blue" vlink="black">
+	<div id="main">
+		<div id="header">
+			<h1> Поликлиника </h1>
+			<p>
+				<img id="h_image" src= "images/header.jpg" alt ="Шапка сайта">
+			</p>
+		</div>
+		<hr>
+		<div id="top">
+			<div id="topmenu">
+				<a href="index.html">Главная</a>					
+				<a href="reg.html">Регистрация</a>
+				<a href="articles.html">Статьи</a>
+				<a href="guestbook.html">Гостевая книга</a>
+			</div>
+			<div id="login">
+				<form action="auth.php" name="auth" method="post">
+					E-mail:
+					<input type="text" name="email">
+					Пароль:
+					<input type="password" name="password">
+					<div class="right_td">
+						<input type="submit" name="button_auth" value="Войти">
+					</div>
+				</form>
+			</div>
+		</div>
+		<hr>
+		<div id="content">
+			<div id="main_content">
+				<h1 align="center"> Статьи </h1>
+				<div class="article_container">
+					<div  class="articles_img"><img src="images/pal_help.jpg" alt="Картинка"></div>
+					<a href="#">Как получить паллеативную помощь</a>
+				</div>
+				<hr>
+				<div class="article_container">
+					<div  class="articles_img"><img src="images/orvi.jpg" alt="Картинка"></div>
+					<a href="#">О мерах профилактики ОРВИ и ГРИППА</a>
+				</div>
+				<hr>
+				<div class="article_container">
+					<div  class="articles_img"><img src="images/help_desk.jpg" alt="Картинка"></div>
+					<a href="#">Единая медицинская справочная служба</a>
+				</div>
+				<hr>
+				<div class="article_container">
+					<div  class="articles_img"><img src="images/distation.jpg" alt="Картинка"></div>
+					<a href="#">Всероссийский онкологический диктант онлайн!</a>
+				</div>
+			</div>
+			<div id="banners">
+				<div class="banner">
+					<a href="#">
+						<img src="images/banner_1.jpg" alt="Баннер1">
+					</a>
+				</div>
+				<hr>
+				<div class="banner">
+					<a href="#">
+						<img src="images/banner_2.jpg" alt="Баннер2">
+					</a>
+				</div>
+				<hr>
+			</div>
+		</div>
+		<hr>
+		<div id="footer">
+			<p>Все права защищены &copy; "Поликлиника"</p>
+		</div>
+	</div>
+</body>
+</html>

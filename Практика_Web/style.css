@@ -1,0 +1,65 @@
+div{
+    text-align: center;
+}
+span{
+    font-size: 14pt;
+    margin-left: 20px;
+}
+select, #timeLimit{
+    font-size: 12pt;
+}
+#addProcedure{
+    margin-left: 20px;
+}
+#nameProc{
+    width: 300px;
+}
+#tblOrder{
+    text-align: center;
+    border: 2px solid #000;
+    font-size: 14pt;
+    margin:auto;
+}
+td{
+    border: 1px solid #000;
+    padding: 3px;
+}
+th{
+    background-color: #CCC;
+    padding: 10px;
+}
+input{
+    font-size: 12pt;
+}
+#dur{
+    width: 50px;
+}
+ul{
+    list-style-type: none;
+}
+.li {
+    padding: 8px;
+    display: flex;
+}
+.li > label {
+     padding: 2px 2px 2px 0;
+     flex: 1;
+}
+.li > input {
+     padding: 2px;
+     flex: 1;
+}
+#form1{
+    width: 500px;
+    margin: 20px auto;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    font-size: 16px;
+}
+.but{
+    display: flex;
+    color: #fff;
+    border: 5px;
+    padding: 10px;
+    justify-content: center;
+}

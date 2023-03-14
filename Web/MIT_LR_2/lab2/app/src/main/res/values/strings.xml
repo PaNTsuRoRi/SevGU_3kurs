@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">lab2</string>
+    <string name="left">Левый</string>
+    <string name="right">Правый</string>
+    <string name="text">Ни один</string>
+    <string name="drop">Сбросить</string>
+</resources>

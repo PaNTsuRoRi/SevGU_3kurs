@@ -1,0 +1,25 @@
+<html>
+<head>
+ <script src="http://code.jquery.com/jquery-latest.js"></script>
+ <script>
+  $(document).ready(function () {
+   $("button").click(function () {
+    $("#div1").fadeIn();
+    $("#div2").fadeToggle("slow");
+    $("#div3").fadeIn(5000);
+   });
+   $("#div1").click(function () {$(this).fadeOut();});
+   $("#div2").click(function () {$(this).fadeOut(4000);});
+   $("#div3").click(function () {$(this).fadeTo("slow",0.5);});
+  });
+ </script>
+</head>
+<body>
+ <p>Demonstrate fadeIn() with different parameters.</p>
+ <button>Click to fade in boxes</button>
+ <br><br>
+ <div id="div1" style="width:80px;height:80px;display:none;background-color:red;"></div><br>
+ <div id="div2" style="width:80px;height:80px;display:none;background-color:green;"></div><br>
+ <div id="div3" style="width:80px;height:80px;display:none;background-color:blue;"></div>
+</body>
+</html>

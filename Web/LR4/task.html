@@ -1,0 +1,37 @@
+<html>
+<head>
+ <title>Task</title>
+ <script Language="JavaScript">
+  function check(form){
+   var message="";
+   if(form.Text1.value.length == 0){
+    message+="Поле не может быть пустым\n";
+   }
+   n=+(form.Text1.value);
+   if(Number.isInteger(n)){
+	if(n >= 5000)
+	 message+="Число должно быть меньше 5000\n";
+   }
+   else message+="Число должно быть целым\n";
+   n=+(form.Password1.value);
+   if(!Number.isInteger(n))
+    message+="Пароль должен быть целым числом\n";
+   if(message != ""){
+    message="Неправильно заполнена форма:\n" + message;
+	alert(message);
+    return false
+   }
+   return true
+  }
+ </script>
+</head>
+<body>
+ <form name="form1" action="" method="post" onSubmit="return check(document.form1)">
+  Введите число:
+  <input type="text" name="Text1"> <br>
+  Введите пароль:
+  <input type="password" name="Password1"> <br>
+  <input type="submit" name="sub" value="Отправить">
+ </form>
+</body>
+</html>

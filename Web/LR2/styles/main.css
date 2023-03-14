@@ -1,0 +1,31 @@
+#main{
+	width:100%;
+	text-align:center;
+}
+#header{
+	text-aling:center;
+}
+#topmenu{
+	font-size:150%; width:100%;
+}
+#topmenu td{
+	text-align:right;
+}
+.rigth_td{
+	text-align:right;
+}
+#content{
+	width:100%;
+}
+#content td{
+	vertical-align:top;
+}
+.article h1, h2, .article_img{
+	text-align:center;
+}
+#banners{
+	border-left: 1px solid #000;
+}
+#footer p{
+	text-align:center;
+}

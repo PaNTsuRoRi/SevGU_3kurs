@@ -1,0 +1,50 @@
+#container{
+	background: #55DD55;
+	width: 500px;
+	height: 400px;
+	position: absolute;
+}
+
+#field{
+	width: 60%;
+	height: 10%;
+	background: #555555;
+	position: absolute;
+	left: 20%;
+	top: 45%;
+}
+
+#menu1{
+	width: 15%;
+	height: 10%;
+	background: #5555FF;
+	position: absolute;
+	left: 85%;
+}
+
+#menu2{
+	width: 15%;
+	height: 10%;
+	background: #FF5555;
+	position: absolute;
+	left: 85%;
+	top:12%;
+}
+
+#menu3{
+	width: 15%;
+	height: 10%;
+	background: #FF55FF;
+	position: absolute;
+	left: 85%;
+	top:24%;
+}
+
+#menu4{
+	width: 15%;
+	height: 10%; 
+	background: #FFFF55;
+	position: absolute;
+	left: 85%;
+	top:36%;
+}

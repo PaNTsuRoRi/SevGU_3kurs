@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CountryActivity">
+
+    <CheckBox
+        android:id="@+id/france"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="50dp"
+        android:text="@string/france"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/italy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/italy"
+        app:layout_constraintStart_toStartOf="@+id/france"
+        app:layout_constraintTop_toBottomOf="@+id/france" />
+
+    <CheckBox
+        android:id="@+id/china"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/china"
+        app:layout_constraintStart_toStartOf="@+id/italy"
+        app:layout_constraintTop_toBottomOf="@+id/italy" />
+
+    <CheckBox
+        android:id="@+id/germany"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/germany"
+        app:layout_constraintStart_toStartOf="@+id/china"
+        app:layout_constraintTop_toBottomOf="@+id/china" />
+
+    <CheckBox
+        android:id="@+id/japan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/japan"
+        app:layout_constraintStart_toStartOf="@+id/germany"
+        app:layout_constraintTop_toBottomOf="@+id/germany" />
+
+    <Button
+        android:id="@+id/ready"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="50dp"
+        android:text="@string/ready"
+        android:onClick="onReady"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,66 @@
+<html>
+<head>
+ <title>Example 3</title>
+ <script Language="JavaScript">
+  function check(form){
+   var firstname=form.firstname.value;
+   var pass=form.pass.value;
+   var message=form.message.value;
+   var rules;
+   var file=form.fileupload.value;
+   var select=form.number.value;
+   var sex1;
+   if(document.form1.sex[0].checked) sex1=document.form1.sex[0].value;
+   else sex1=document.form1.sex[1].value;
+   if(document.form1.rules.checked) rules="yes";
+   else rules="no";
+   var bad="";
+   if(firstname.length < 3)
+    bad+="Имя слишком короткое" + "\n";
+   if(firstname.length > 32)
+    bad+="Имя слишком длинное" + "\n";
+   if(pass.length < 3)
+    bad+="Пароль слишком короткий" + "\n";
+   if(pass.length > 32)
+    bad+="Пароль слишком длинный" + "\n";
+   if(message.length < 3)
+    bad+="Сообщение слишком короткое" + "\n";
+   if(rules != "yes")
+    bad+="Вы не согласились с правилами" + "\n";
+   if(file.length == 0)
+    bad+="Вы не выбрали файл для загрузки" + "\n";
+   if(bad != ""){
+    bad="Неверно заполнена форма:" + "\n" + bad;
+	alert(bad);
+	return false;
+   }
+   return true;
+  }
+ </script>
+</head>
+<body>
+ <form name="form1" action="handler.php" method="post" onSubmit="return check(document.form1)">
+  Ваше имя:
+  <input type="text" name="firstname"> <br>
+  Ваш пароль:
+  <input type="password" name="pass"> <br>
+  Ваш пол:
+  <input type="radio" name="sex" value="male" checked>M
+  <input type="radio" name="sex" value="female">F <br>
+  Выберите число:
+  <select name="number">
+   <option selected value="1">1</option>
+   <option value="2">2</option>
+   <option value="3">3</option>
+  </select> <br>
+  Ваше сообщение:
+  <textarea name="message"></textarea> <br>
+  Согласитесь с нашими правилами:
+  <input type="checkbox" name="rules"> <br>
+  <input type="hidden" value="hidefield">
+  Загрузите файл:
+  <input type="file" name="fileupload"> <br>
+  <input type="submit" value="Отправить" name="sub">
+ </form>
+</body>
+</html>

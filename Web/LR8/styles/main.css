@@ -1,0 +1,52 @@
+#main{
+	width:100%;
+}
+#header{
+	text-align:center;
+}
+#h_image{
+	height: 150px;
+}
+#topmenu{
+	font-size:150%;
+}
+#topmenu a{
+	margin-left: 30px;
+	text-align:center;
+}
+#login{
+	text-align: right;
+}
+.rigth_td{
+	text-align:right;
+}
+#content{
+	width:100%;
+}
+.article h1, .article_img{
+	text-align: center;
+}
+.article_img img{
+	height: 300px;
+}
+#banners{
+	border-left: 1px solid  #000;
+	width: 240px;
+	vertical-align: top;
+}
+.banner img{
+	padding-left: 5px;
+	width: 90%
+}
+#footer p{
+	text-align: center;
+}
+.articles h1{
+	text-align: center;
+}
+#button{
+	margin-top: 20px;
+}
+.articles_img img{
+	height: 150px;
+}

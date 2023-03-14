@@ -1,0 +1,31 @@
+<html>
+<head>
+ <title>Task1</title>
+ <script src="http://code.jquery.com/jquery-latest.js"></script>
+ <script>
+  $(document).ready(function(){
+   var oddElementLi = $('li:even');
+   $("#hide").click(function () {
+    oddElementLi.hide();
+   });
+   $("#show").click(function () {
+    oddElementLi.show();
+   });
+  });
+ </script>
+</head>
+<body>
+ <button id="hide">Hide</button>
+ <button id="show">Show</button>
+ <ol><li>01 нечет
+     <li>02 чет
+     <li>03 нечет
+     <li>04 чет
+     <li>05 нечет
+     <li>06 чет
+     <li>07 нечет
+     <li>08 чет
+     <li>09 нечет
+     <li>10 чет</ol>
+</body>
+</html>

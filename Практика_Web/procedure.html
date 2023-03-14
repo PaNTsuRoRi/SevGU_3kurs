@@ -1,0 +1,211 @@
+<html>
+<head>
+    <title>Процедуры</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="duration()">
+    <div>
+        <span>Процедуры:</span>
+        <select id="lstProc">
+            <option hidden></option>
+            <optgroup label="Консультация">
+                <option value1="500" value2="20">Врач-косметолог</option>
+                <option value1="600" value2="20">Врач-трихолог</option>
+                <option value1="400" value2="30">Пластический хирург</option>
+            </optgroup>
+            <optgroup label="Инъекционная косметология">
+                <option value1="750"  value2="40">Озонотерапия</option>
+                <option value1="1250" value2="60">Мезотерапия</option>
+            </optgroup>
+            <optgroup label="Трихология">
+                <option value1="1300" value2="70">Плазмотерапия</option>
+                <option value1="325" value2="50">Криомассаж</option>
+            </optgroup>
+            <optgroup label="Аппаратная косметология">
+                <option value1="1650" value2="80">Фототерапия</option>
+                <option value1="4000" value2="90">Удаление татуировок</option>
+            </optgroup>
+        </select>
+        <input type="button" id="refresh" value="Обновить" onClick="getDur()">
+        <span>Предельное время (мин):</span>
+        <input type="text" id="timeLimit" value="120" size="10" 
+            onfocus="if(this.value == '120') {this.value = '';}" onblur="if(this.value == '') {this.value='120';}">
+        <input type="button" id="addProcedure"  value="Добавить" onClick="AddToList()">
+        <hr>
+        <table id="tblOrder">
+            <caption><h1>Выбранные процедуры</h1></caption>
+            <thead>
+                <tr>
+                    <th><input type="checkbox" onClick="ToggleCheck(this)"></th>
+                    <th id="nameProc">Процедура</th>
+                    <th>Цена за 10 мин</th>
+                    <th>Длительность</th>
+                    <th>Стоимость</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <td></td>
+                    <td><b>ИТОГО:</b></td>
+                    <td></td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td><input type="button" value="Удалить отмеченное" onClick="RemoveSelected()"></td>
+                </tr>
+            </tfoot>
+            <tbody></tbody>
+        </table>
+    </div>
+    <script type="text/javascript">
+        var tbl = document.getElementById('tblOrder');
+        var oList = document.getElementById('lstProc');
+
+        // Добавление пунктов заказа
+        function AddToList() {
+            var qty = document.getElementById('timeLimit').value;
+            var price = oList.options[oList.selectedIndex].attributes.value1.value;
+            var time = oList.options[oList.selectedIndex].attributes.value2.value;
+            var sumdur = parseFloat(tbl.tFoot.rows[0].cells[3].innerHTML);
+            var durvalue = parseFloat(oList.options[oList.selectedIndex].attributes.value2.value);
+            /* Определяем значение, введённое в текстовое поле */
+            /* Проверка: распознаётся ли значение как число? Если нет, считаем 120 */
+            if(parseFloat(qty) != qty)
+                qty = 120;
+            if((durvalue+sumdur)>qty){
+                alert('Общая длительность процедур превышает предел!!!');
+                return;
+            }
+            /* Вставляем строку в тело таблицы */
+            var oRow = tbl.tBodies[0].insertRow(-1);
+            /* В добавленную строку вставляем, во-первых, checkbox */
+            oRow.insertCell(-1).innerHTML = '<input type="checkbox">';
+            /* во-вторых, текст, взятый из списка выбора процедур */
+            oRow.insertCell(-1).innerHTML = oList.options[oList.selectedIndex].text;
+            /* в-третьих, цена выбранной процедуры */
+            oRow.insertCell(-1).innerHTML = price;
+            /* далее, время процедуры*/
+            oRow.insertCell(-1).innerHTML = time;
+            /* затем стоимость пункта заказа */
+            oRow.insertCell(-1).innerHTML = price/10 * time;
+            /* и, наконец, кнопку "Удалить" */
+            oRow.insertCell(-1).innerHTML = '<input type="button" value="Удалить" onClick="RemoveProc(this)"">';
+            /* По окончании вставки строки необходимо пересчитать сумму заказа */
+            Calculate();
+        }
+
+        function Calculate() {
+            /* Счётчики для общего времени процедур и общей стоимости */
+             var qty = 0, amount = 0;
+            /* Цикл по всем строкам в теле таблицы */
+            for(var i = 0, n = tbl.tBodies[0].rows.length; i < n; i++) {
+                /* Увеличиваем qty на значение в 4 столбце текущей строки */
+                qty += parseFloat(tbl.tBodies[0].rows[i].cells[3].innerHTML);
+                /* Увеличиваем amount на значение в 5 столбце текущей строки */
+                amount += parseFloat(tbl.tBodies[0].rows[i].cells[4].innerHTML);
+            }
+            /* Записываем qty в 3 столбец нижнего колонтитула */
+            tbl.tFoot.rows[0].cells[3].innerHTML = qty;
+            /* Записываем amount в 4 столбец нижнего колонтитула */
+            tbl.tFoot.rows[0].cells[4].innerHTML = amount;
+        }
+
+        function RemoveProc(elem) {
+            tbl.deleteRow(elem.parentNode.parentNode.rowIndex);
+            Calculate();
+        }
+
+        function RemoveSelected() {
+            /* находим все элементы input в теле таблицы */
+            var checks = tbl.tBodies[0].getElementsByTagName('input');
+            var i = 0;
+            /* начинаем перебор элементов в цикле */
+            while(i < checks.length) {
+                /* рассматриваем элемент лишь в том случае, если это checkbox и он отмечен */
+                if(checks[i].type == 'checkbox' && checks[i].checked)
+                /* вызываем функцию, которая удалит строку с пунктом заказа - передаём ей ссылку на checkbox */
+                    RemoveProc(checks[i]);
+                else
+                /* счётчик увеличиваем лишь в том случае, если удаление не было сделано */
+                i++;
+            }
+        }
+
+        function ToggleCheck(el) {
+            var checks = tbl.tBodies[0].getElementsByTagName('input');
+            var i = 0;
+            while(i < checks.length){
+                if(checks[i].type == 'checkbox'){
+                    if(el.checked)
+                        checks[i].checked=true;
+                    else
+                        checks[i].checked=false;
+                }
+                i++;
+            }
+        }
+
+        function duration(){
+            for(var i=1, n=oList.options.length; i<n; i++){
+                oList.options[i].text += (" - " + oList.options[i].attributes.value2.value + " мин");
+            }
+        }
+
+        function getDur(){
+			self.location="База_данных.html";
+		}
+
+        /* Обработка новых цен */
+		userName = ""+ document.location;
+		if (userName.indexOf("?")>0) {
+		    n1 = userName.indexOf("=")+1;
+		    userName= userName.substring(n1);  /* Обрезаем по первый знак равно */
+		
+		    n1= userName.indexOf("=")+1;
+		    VK=userName.substr(0,n1-1);
+
+		    userName= userName.substring(n1);
+		    n1= userName.indexOf("=")+1;
+		    VT=userName.substr(0,n1-1);
+		
+		    userName= userName.substring(n1);
+		    n1= userName.indexOf("=")+1;
+		    PH=userName.substr(0,n1-1);
+
+            userName= userName.substring(n1);
+		    n1= userName.indexOf("=")+1;
+		    OT=userName.substr(0,n1-1);
+
+            userName= userName.substring(n1);
+		    n1= userName.indexOf("=")+1;
+		    MT=userName.substr(0,n1-1);
+
+            userName= userName.substring(n1);
+		    n1= userName.indexOf("=")+1;
+		    PT=userName.substr(0,n1-1);
+
+            userName= userName.substring(n1);
+		    n1= userName.indexOf("=")+1;
+		    KM=userName.substr(0,n1-1);
+
+            userName= userName.substring(n1);
+		    n1= userName.indexOf("=")+1;
+		    FT=userName.substr(0,n1-1);
+
+            userName= userName.substring(n1);
+            n1= userName.indexOf("=")+1;
+		    UT= userName.substring(n1);
+
+            oList.options[1].attributes.value2.value = VK;
+		    oList.options[2].attributes.value2.value = VT;
+		    oList.options[3].attributes.value2.value = PH;
+		    oList.options[4].attributes.value2.value = OT;
+            oList.options[5].attributes.value2.value = MT;
+            oList.options[6].attributes.value2.value = PT;
+            oList.options[7].attributes.value2.value = KM;
+            oList.options[8].attributes.value2.value = FT;
+            oList.options[9].attributes.value2.value = UT;
+		}
+    </script>
+</body>
+</html>
